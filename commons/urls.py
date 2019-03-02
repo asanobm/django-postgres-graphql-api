@@ -22,14 +22,7 @@ from django.views.decorators.csrf import csrf_exempt
 from commons.schema import schema
 
 urlpatterns = [
-    # path('password_reset/', views.PasswordResetView.as_view(), name='admin_password_reset'),
-    # path('password_reset/done/', views.PasswordResetDoneView.as_view(), name='password_reset_done'),
-    # path('reset/<uidb64>/<token>/', views.PasswordResetConfirmView.as_view(), name='password_reset_confirm'),
-    # path('reset/done/', views.PasswordResetCompleteView.as_view(), name='password_reset_complete'),
-    path('', include('store.urls')),
     path('admin/', admin.site.urls),
-    # path(r'graphql', GraphQLView.as_view(graphiql=True, schema=schema)),
-    # path(r'__graphiql/', GraphQLView.as_view(graphiql=True)),
     url(r'^__graphql', csrf_exempt(GraphQLView.as_view(schema=schema))),
     url(r'^__graphiql', GraphQLView.as_view(graphiql=True, schema=schema)),
 ]

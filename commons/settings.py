@@ -41,7 +41,6 @@ ALLOWED_HOSTS = [
 
 INSTALLED_APPS = [
     # Applications
-    'store',
     'ingredients',
 
     # Middleware
@@ -98,7 +97,8 @@ WSGI_APPLICATION = 'commons.wsgi.application'
 # https://docs.djangoproject.com/en/2.1/ref/settings/#databases
 
 
-POSTGRES_HOST = os.getenv('POSTGRES_HOST')
+# POSTGRES_HOST = os.getenv('POSTGRES_HOST')
+POSTGRES_HOST = '0.0.0.0'
 POSTGRES_DB = os.getenv('POSTGRES_DB')
 POSTGRES_USER = os.getenv('POSTGRES_USER')
 POSTGRES_PASSWORD = os.getenv('POSTGRES_PASSWORD')
